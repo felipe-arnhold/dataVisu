@@ -6,10 +6,18 @@
 #include <QMainWindow>
 #include <QMqttClient>
 #include <QtWebSockets/QWebSocket>
+#include <QtWidgets/QMessageBox>
+#include <QJsonObject>
+#include <QJsonDocument>
+#include <QJsonArray>
+#include <QtCharts/QChartView>
+#include <QtCharts/QSplineSeries>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class tela; }
 QT_END_NAMESPACE
+
+QT_CHARTS_USE_NAMESPACE
 
 class tela : public QMainWindow
 {
@@ -28,6 +36,11 @@ private slots:
     void updateLogStateChange();
     void brokerDisconnected();
     void onPBConnectClicked();
+    void updateData(const QMqttMessage msg);
+    void onPBSubscribeClicked();
+    void onPBPublishClicked();
+
+    void onPBTriggerClicked();
 
 private:
     Ui::tela *ui;
@@ -39,5 +52,9 @@ private:
 
     QString trigTopic;
     int m_version;
+
+    // Chart Var
+    QChart *m_chart;
+    QChartView *m_chartView;
 };
 #endif // TELA_H

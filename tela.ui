@@ -184,13 +184,25 @@
          </widget>
         </item>
         <item row="1" column="1" colspan="4">
-         <widget class="QLineEdit" name="le_mqttDataTopic"/>
+         <widget class="QLineEdit" name="le_mqttDataTopic">
+          <property name="text">
+           <string>qtmqtt/teste666</string>
+          </property>
+         </widget>
         </item>
         <item row="0" column="1" colspan="4">
-         <widget class="QLineEdit" name="le_mqttBrokerUrl"/>
+         <widget class="QLineEdit" name="le_mqttBrokerUrl">
+          <property name="text">
+           <string>ws://test.mosquitto.org:8080</string>
+          </property>
+         </widget>
         </item>
         <item row="2" column="1" colspan="4">
-         <widget class="QLineEdit" name="le_mqttTriggerTopic"/>
+         <widget class="QLineEdit" name="le_mqttTriggerTopic">
+          <property name="text">
+           <string>luisteste/axisX</string>
+          </property>
+         </widget>
         </item>
         <item row="3" column="4">
          <widget class="QPushButton" name="pb_mqttConnect">
